@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}My Jobs{% endblock %}
+{% block content %}
+<h2>My Job Postings</h2>
+<div class="list-group">
+  {% for job in jobs %}
+  <a class="list-group-item list-group-item-action" href="{% url 'jobs:job_detail' job.pk %}">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ job.title }}</h5>
+      <small>{{ job.created_at|date:'M d, Y' }}</small>
+    </div>
+    <p class="mb-1">{{ job.company_name }} — {{ job.location }}</p>
+  </a>
+  <a class="btn btn-sm btn-outline-secondary mt-2" href="{% url 'jobs:job_applicants' job.pk %}">View Applicants</a>
+  {% empty %}
+  <div class="alert alert-info">You haven't posted any jobs yet.</div>
+  {% endfor %}
+</div>
+{% endblock %}
+

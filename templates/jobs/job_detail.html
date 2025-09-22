@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}{{ job.title }}{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title">{{ job.title }}</h2>
+        <div class="text-muted mb-2"><i class="fa-solid fa-building"></i> {{ job.company_name }}</div>
+        <div class="mb-3"><i class="fa-solid fa-location-dot text-primary"></i> {{ job.location }}</div>
+        <div class="job-description">{{ job.description|linebreaks }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 mt-3 mt-lg-0">
+    <div class="card shadow-sm">
+      <div class="card-body d-grid gap-2">
+        {% if user.is_authenticated and user.role == 'applicant' %}
+          <a class="btn btn-primary btn-lg" href="{% url 'jobs:apply_job' job.pk %}"><i class="fa-solid fa-paper-plane"></i> Apply</a>
+        {% endif %}
+        {% if user.is_authenticated and user.role == 'employer' and job.posted_by_id == user.id %}
+          <a class="btn btn-outline-secondary" href="{% url 'jobs:job_applicants' job.pk %}"><i class="fa-solid fa-users"></i> View Applicants</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if user.is_authenticated and user.role == 'applicant' %}
+  <a class="btn btn-primary" href="{% url 'jobs:apply_job' job.pk %}">Apply</a>
+{% endif %}
+
+{% if user.is_authenticated and user.role == 'employer' and job.posted_by_id == user.id %}
+  <a class="btn btn-outline-secondary" href="{% url 'jobs:job_applicants' job.pk %}">View Applicants</a>
+{% endif %}
+{% endblock %}
+

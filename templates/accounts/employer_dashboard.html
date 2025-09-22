@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Employer Dashboard{% endblock %}
+{% block content %}
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+        <h2 class="card-title">Employer Dashboard</h2>
+        <p class="text-muted">Use the actions to manage your job postings.</p>
+        <a class="btn btn-success me-2" href="{% url 'jobs:post_job' %}"><i class="fa-solid fa-plus"></i> Post a Job</a>
+        <a class="btn btn-outline-primary" href="{% url 'jobs:my_jobs' %}"><i class="fa-solid fa-list"></i> My Jobs</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
