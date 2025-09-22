@@ -1,7 +1,12 @@
 # QuantumLapis · Job Portal (Django 4)
 
 A professional job portal where Employers post jobs and Applicants search and apply. Built with Django 4, SQLite, and Bootstrap.
-<img width="1268" height="812" alt="image" src="https://github.com/user-attachments/assets/2316fec6-e8ac-4466-ba77-de9d360fccd7" />
+<img width="1268" height="812" alt="Screenshot 2025-09-22 151003" src="https://github.com/user-attachments/assets/ca042995-8f09-4b01-8e66-21895374e8cb" />
+<img width="1205" height="817" alt="Screenshot 2025-09-22 151044" src="https://github.com/user-attachments/assets/aaf60ca7-7340-47e6-bc7f-2d2914f2d142" />
+<img width="1240" height="818" alt="Screenshot 2025-09-22 151109" src="https://github.com/user-attachments/assets/612d1c50-a8f6-4253-8eb6-0a6092233584" />
+<img width="1384" height="672" alt="Screenshot 2025-09-22 151147" src="https://github.com/user-attachments/assets/d0e51d3f-4222-449c-beba-8c7df395930f" />
+<img width="1308" height="374" alt="Screenshot 2025-09-22 151133" src="https://github.com/user-attachments/assets/ec9e4931-4495-42fa-99b7-1946bb45bd77" />
+
 
 ## Features
 - Role-based auth with a custom `User` model (`employer` / `applicant`)
